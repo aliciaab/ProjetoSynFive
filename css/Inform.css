@@ -26,15 +26,22 @@ body {
   background: #e8f5e9;
 }
 
-/* ===== HEADER PADRONIZADO ===== */
 .ecoleta-header {
   display: flex;
   align-items: center;
+  justify-content: center; /* centraliza o conteúdo horizontalmente */
   gap: 0.5rem;
   padding: 1rem;
   border-bottom: 1px solid #d8e9d8;
   background: #e8f5e9;
   border-radius: 12px 12px 0 0;
+  position: relative; /* necessário para posicionar a logo à esquerda */
+}
+
+/* Logo fixa à esquerda */
+.icon-left {
+  position: absolute;
+  left: 1rem;
 }
 
 .icon-left img.logo-img.logo {
@@ -43,37 +50,28 @@ body {
   object-fit: contain;
   cursor: pointer;
 }
-.ecoleta-header {
-  display: flex;
-  align-items: center; /* alinha verticalmente logo e texto */
-  gap: 0.5rem;         /* espaço mínimo entre logo e texto */
-  padding: 1rem;
-  border-bottom: 1px solid #d8e9d8;
-  background: #e8f5e9;
-  border-radius: 12px 12px 0 0;
-}
 
+/* Centraliza o título independentemente da logo */
 .header-center {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* mantém o texto junto à logo */
-  justify-content: center;  /* centraliza verticalmente em relação à logo */
-  gap: 0.1rem;              /* deixa título e parágrafo mais próximos */
+  align-items: center; /* centraliza horizontalmente */
+  justify-content: center;
+  gap: 0.1rem;
 }
 
 .header-center h2 {
-  font-size: 1.0rem;  /* tamanho menor */
+  font-size: 1.2rem;
   font-weight: 700;
   color: #333;
   margin: 0;
 }
 
 .header-center p.descricao {
-  font-size: 0.9rem;   /* tamanho menor */
+  font-size: 0.9rem;
   color: #333;
   margin: 0;
 }
-
 
 
 /* ===== CONTEÚDO ===== */
@@ -82,7 +80,9 @@ body {
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
+  padding-bottom: 6rem; /* adiciona espaço para não colar no menu inferior */
 }
+
 
 /* ===== INFO CARDS ===== */
 .info-card {

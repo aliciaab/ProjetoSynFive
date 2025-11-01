@@ -45,17 +45,43 @@
         loading="lazy">
       </iframe>
     </div>
-    <section class="legend">
-      <div class="legend-item"><div class="dot organic"></div><p>Caminhão orgânico</p></div>
-      <div class="legend-item"><div class="dot recycle"></div><p>Caminhão reciclável</p></div>
-      <div class="legend-item"><div class="dot passed"></div><p>Caminhão já passou</p></div>
-      <div class="legend-item"><div class="dot current"></div><p>Caminhão está no local</p></div>
-    </section>
+<section class="legend">
+  <div class="legend-item">
+    <span class="material-symbols-outlined truck-icon organic-truck">local_shipping</span>
+    <p>Caminhão orgânico</p>
+  </div>
 
+  <div class="legend-item">
+    <span class="material-symbols-outlined truck-icon recycle-truck">local_shipping</span>
+    <p>Caminhão reciclável</p>
+  </div>
+
+  <div class="legend-item">
+    <div class="status-line"></div>
+    <p>Caminhão já passou</p>
+  </div>
+
+  <div class="legend-item">
+    <div class="status-circle"></div>
+    <p>Caminhão está no local</p>
+  </div>
+
+  <div class="legend-item coleta-item">
+    <span class="material-symbols-outlined location-icon">location_on</span>
+    <p>Pontos de coleta de lixo</p>
+  </div>
+</section>
+
+  <section class="coleta-info">
+  <p>
+    <strong>Pontos de coleta de lixo:</strong> locais onde você pode descartar seus resíduos de forma correta e sustentável.
+  </p>
+</section>
     <section class="info-card">
       <p class="label">Tempo estimado para a coleta</p>
       <p class="time">2h para que o caminhão passe por sua casa</p>
     </section>
+
 
     <nav class="bottom-nav">
       <button class="nav-item active" data-link="./home.html">
@@ -65,10 +91,6 @@
       <button class="nav-item" data-link="./Inform.html">
         <span class="material-symbols-outlined">help_outline</span>
         <span>Informações</span>
-      </button>
-      <button class="nav-item" data-link="./Chat.html">
-        <span class="material-symbols-outlined">chat_bubble</span>
-        <span>FAQ</span>
       </button>
     </nav>
 
