@@ -1,4 +1,3 @@
-// Efeito simples de troca de menu ativo
 const navButtons = document.querySelectorAll(".nav-item");
 
 navButtons.forEach(btn => {

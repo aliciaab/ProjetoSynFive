@@ -13,7 +13,6 @@ body {
   color: #333;
 }
 
-/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
@@ -44,7 +43,6 @@ body {
   color: #555;
 }
 
-/* ===== MAIN CONTENT ===== */
 .main-container {
   padding: 1rem;
 }
@@ -59,7 +57,6 @@ body {
   margin-bottom: 0.8rem;
 }
 
-/* ===== CARD ===== */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -107,7 +104,6 @@ body {
   right: 0.9rem;
 }
 
-/* ===== CARD COLORS ===== */
 .green .icon {
   background: #c8e6c9;
   color: #2e7d32;
