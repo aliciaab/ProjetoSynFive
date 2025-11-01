@@ -135,16 +135,21 @@ body {
   font-size: 0.8rem;
 }
 
-.nav-item span.material-symbols-outlined {
-  font-size: 1.8rem;
-  margin-bottom: 0.2rem;
+/* Todos os botões têm texto cinza por padrão */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #777; /* texto cinza */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
-.nav-item.active {
-  color: #388e3c;
-}
-
+/* Apenas o ícone do botão ativo que for FAQ/Chat fica verde */
 .nav-item.active span.material-symbols-outlined {
+  color: #388e3c; /* ícone verde */
   font-variation-settings: 'FILL' 1;
 }
 
