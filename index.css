@@ -29,21 +29,24 @@ body {
 
 .logo-circle {
   background: #fff;
-  width: 110px;
-  height: 110px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   animation: fadeIn 1s ease;
+  position: relative; /* garante que elementos dentro fiquem relativos */
 }
 
 .logo-circle img {
-  width: 55px;
-  height: 55px;
-  animation: scaleIn 1.2s ease;
+  max-width: 70%;   /* ajusta o tamanho da logo proporcional ao círculo */
+  max-height: 70%;
+  object-fit: contain;
+  display: block;   /* evita deslocamento por inline images */
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
