@@ -33,9 +33,13 @@ function handleStep(value) {
     createMessage("Faz quanto tempo que o caminhão de lixo não passa? Entre em contato com a prefeitura local para relatar o problema.");
     step++;
     setTimeout(() => {
-      createMessage("Qual bairro você mora?");
+      createMessage("Qual região da cidade você mora?");
       showOptions([
-        { text: "Francisco Beltrão", value: "Francisco Beltrão" }
+        { text: "Sul", value: "Sul" },
+        { text: "Centro", value: "Centro" },
+        { text: "Norte", value: "Norte" },
+        { text: "Leste", value: "Leste" },
+        { text: "Oeste", value: "Oeste" }
       ]);
     }, 500);
 
@@ -57,7 +61,9 @@ function handleStep(value) {
     userData.tempo = value;
     step++;
     setTimeout(() => {
-      createMessage(`Obrigado! Você relatou que no bairro ${userData.bairro} o caminhão de lixo não passa há ${userData.tempo}. A prefeitura será notificada.`);
+      createMessage(`Obrigado! Você relatou que na região ${userData.bairro} o caminhão de lixo não passa há ${userData.tempo}. A prefeitura será notificada.`);
+      faqButtons.innerHTML = ""; // Remove botões finais
+      createMessage(`Caso o problema persistir, entre em contato pelo atendimento humanizado: (46) 3523-6340.`);
       faqButtons.innerHTML = ""; // Remove botões finais
     }, 500);
   }
