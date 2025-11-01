@@ -28,3 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Seleciona o mascote
+const mascote = document.getElementById('mascote');
+
+setTimeout(() => {
+  mascote.style.opacity = 0;
+  mascote.style.transition = 'opacity 0.5s';
+  setTimeout(() => {
+    mascote.style.display = 'none';
+  }, 500);
+}, 5000); // 5 segundos visível
