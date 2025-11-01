@@ -1,19 +1,30 @@
-const navButtons = document.querySelectorAll(".nav-item");
-const chatBtn = document.getElementById("chatBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const navButtons = document.querySelectorAll(".bottom-nav .nav-item");
 
-navButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    navButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+  // Navegação inferior
+  navButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      navButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const link = btn.getAttribute("data-link");
+      if (link) window.location.href = link;
+    });
   });
-});
 
-// Redireciona para página de Chat
-chatBtn.addEventListener("click", () => {
-  window.location.href = "Chat.html"; // Coloque o caminho correto da sua página
-});
-const notifBtn = document.getElementById("notifBtn");
+  // Botão "Ir para o Mapa" ou Home
+  const irMapaBtn = document.getElementById("irMapa");
+  if (irMapaBtn) {
+    irMapaBtn.addEventListener("click", () => {
+      window.location.href = "./../html/Home.html";
+    });
+  }
 
-notifBtn.addEventListener("click", () => {
-  window.location.href = "Not.html"; // Substitua pelo caminho correto
+  // Botão de Notificações
+  const notifBtn = document.getElementById("notifBtn");
+  if (notifBtn) {
+    notifBtn.addEventListener("click", () => {
+      window.location.href = "./../html/Not.html"; // caminho da página de notificações
+    });
+  }
 });

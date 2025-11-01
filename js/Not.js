@@ -3,8 +3,7 @@ const logo = document.querySelector(".header .logo");
 
 if (logo) {
   logo.addEventListener("click", () => {
-    // Caminho relativo da página de notificações para a home
-    window.location.href = "home.html"; 
+    window.location.href = "./../html/Home.html"; 
   });
 }
 

@@ -1,7 +1,14 @@
-body {
-  font-family: 'Public Sans', sans-serif;
-  background: linear-gradient(to bottom, #f7f7f7, #e0e0e0);
+/* ===== RESET E FONTE ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
+}
+
+/* ===== BODY E CONTAINER PRINCIPAL ===== */
+body {
+  background: #e8f5e9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,23 +17,27 @@ body {
 
 .container {
   width: 100%;
-  max-width: 480px;
+  max-width: 420px; /* mesma largura da Home */
   padding: 1.5rem;
 }
+
 
 .conteudo {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: #fff;
+  background: #e8f5e9; /* mesma cor da home para uniformidade */
   border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
+/* ===== TÍTULOS ===== */
 h1 {
   color: #2e7d32;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
@@ -36,34 +47,48 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* ===== CARTÕES DE INFORMAÇÃO ===== */
 .info-card {
-  background: #f0f0f0;
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 16px;
   padding: 1rem;
   text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .info-card h2 {
-  color: #4caf50;
+  color: #388e3c;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .info-card ul {
   list-style: disc inside;
   padding-left: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
 }
 
 .info-card p {
   font-size: 0.95rem;
   color: #333;
+  margin-top: 0.3rem;
 }
 
+/* ===== BOTÃO ===== */
 .botao-area {
   margin-top: 1rem;
 }
 
 #irMapa {
-  background: #4caf50;
+  background: #388e3c;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -72,13 +97,15 @@ h1 {
   width: 100%;
   padding: 1rem 0;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #irMapa:hover {
-  background: #43a047;
+  background: #2e7d32;
+  transform: translateY(-2px);
 }
 
+/* ===== NAVEGAÇÃO INFERIOR ===== */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -87,6 +114,14 @@ h1 {
   height: 65px;
   border-top: 1px solid #ddd;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 20px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+  z-index: 100;
 }
 
 .nav-item {
@@ -98,6 +133,7 @@ h1 {
   border: none;
   cursor: pointer;
   font-size: 0.8rem;
+  transition: color 0.2s ease;
 }
 
 .nav-item span.material-symbols-outlined {
@@ -111,4 +147,15 @@ h1 {
 
 .nav-item.active span.material-symbols-outlined {
   font-variation-settings: 'FILL' 1;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 420px) {
+  .conteudo {
+    padding: 1rem;
+  }
+
+  .info-card {
+    padding: 0.8rem 1rem;
+  }
 }

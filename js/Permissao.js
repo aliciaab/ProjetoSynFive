@@ -4,5 +4,5 @@ if (prefersDark) {
 }
 
 document.getElementById("continueBtn").addEventListener("click", () => {
-  alert("Permissões aceitas! (Aqui você pode colocar a lógica real)");
+  window.location.href = "./../html/Home.html";
 });
