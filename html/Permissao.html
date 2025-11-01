@@ -1,88 +1,52 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permissões - Ecoleta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="./../css/Permissao.css">
+</head>
 
-<html class="light" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Permissões - Ecoleta</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#13ec5b",
-            "background-light": "#f6f8f6",
-            "background-dark": "#102216",
-          },
-          fontFamily: {
-            "display": ["Public Sans"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 24;
-      font-size: 24px;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-b from-[#F5F5F5] to-white dark:from-background-dark dark:to-background-dark group/design-root overflow-x-hidden">
-<main class="flex w-full grow flex-col items-center justify-between px-4 py-8 text-center sm:px-6">
-<div class="flex-shrink-0">
-<div class="flex w-full items-center justify-center p-4">
-<div class="flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-md dark:bg-zinc-800">
-<span class="material-symbols-outlined text-5xl text-[#4CAF50]">recycling</span>
-</div>
-</div>
-</div>
-<div class="w-full max-w-md space-y-8 py-8">
-<div class="flex flex-col items-center gap-4 text-center">
-<div class="text-[#4CAF50] flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10 dark:bg-primary/20">
-<span class="material-symbols-outlined text-3xl">map</span>
-</div>
-<div class="flex flex-col gap-1">
-<p class="text-[#333333] dark:text-gray-200 text-lg font-bold leading-normal">Permitir Localização</p>
-<p class="text-[#888888] dark:text-gray-400 text-base font-normal leading-normal">Para mostrar as rotas de coleta e o caminhão mais próximo de você em tempo real.</p>
-</div>
-</div>
-<div class="flex flex-col items-center gap-4 text-center">
-<div class="text-[#4CAF50] flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10 dark:bg-primary/20">
-<span class="material-symbols-outlined text-3xl">notifications</span>
-</div>
-<div class="flex flex-col gap-1">
-<p class="text-[#333333] dark:text-gray-200 text-lg font-bold leading-normal">Ativar Notificações</p>
-<p class="text-[#888888] dark:text-gray-400 text-base font-normal leading-normal">Para avisarmos sobre horários, mudanças na rota e quando o caminhão estiver próximo.</p>
-</div>
-</div>
-</div>
-<div class="w-full max-w-md flex-shrink-0">
-<div class="flex py-3">
-<button class="flex h-14 min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#888888] text-white text-lg font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-[#777777] dark:bg-zinc-700 dark:hover:bg-zinc-600">
-<span class="truncate">Aceitar e Continuar</span>
-</button>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+<body>
+  <div class="container">
+    <main class="main">
+      <div class="icon-container">
+        <div class="icon-bg">
+          <span class="material-symbols-outlined main-icon">recycling</span>
+        </div>
+      </div>
+
+      <div class="permissions">
+        <div class="permission-item">
+          <div class="perm-icon-bg">
+            <span class="material-symbols-outlined perm-icon">map</span>
+          </div>
+          <div class="perm-text">
+            <p class="perm-title">Permitir Localização</p>
+            <p class="perm-desc">Para mostrar as rotas de coleta e o caminhão mais próximo de você em tempo real.</p>
+          </div>
+        </div>
+
+        <div class="permission-item">
+          <div class="perm-icon-bg">
+            <span class="material-symbols-outlined perm-icon">notifications</span>
+          </div>
+          <div class="perm-text">
+            <p class="perm-title">Ativar Notificações</p>
+            <p class="perm-desc">Para avisarmos sobre horários, mudanças na rota e quando o caminhão estiver próximo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão -->
+      <div class="button-container">
+        <button id="continueBtn">Aceitar e Continuar</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="./../js/Permissao.js"></script>
+</body>
+</html>

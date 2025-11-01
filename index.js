@@ -1,22 +1,17 @@
-// Exibir tela de splash por 2 segundos e depois mostrar as permissões
 window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+
+  const splashDuration = 2000; // Tempo que a splash aparece (2s)
+  const fadeDuration = 600;    // Duração do fade-out (0.6s)
+
   setTimeout(() => {
-    document.getElementById("splash").style.opacity = "0";
+    splash.style.transition = `opacity ${fadeDuration}ms ease`;
+    splash.style.opacity = "0";
+
     setTimeout(() => {
-      document.getElementById("splash").style.display = "none";
-      const permissions = document.getElementById("permissions");
-      permissions.style.display = "flex";
-      document.body.style.background = "#e8f5e9";
-    }, 600);
-  }, 2000);
-});
-
-// Ações dos botões
-document.getElementById("allow").addEventListener("click", () => {
-  alert("Permissões concedidas! 🌱");
-  window.location.href = "./html/home.html";
-});
-
-document.getElementById("deny").addEventListener("click", () => {
-  alert("Você pode ativar as permissões mais tarde nas configurações.");
+      splash.style.display = "none";
+      // Redireciona para a página de permissões
+      window.location.href = "./html/Permissao.html"; 
+    }, fadeDuration);
+  }, splashDuration);
 });
