@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html class="light" lang="pt-br">
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Agente de IA - Gestão de Resíduos</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Simples - Gestão de Resíduos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <link rel="stylesheet" href="./../css/Chat.css">
+  <link rel="stylesheet" href="./../css/Chat.css" />
 </head>
 <body>
-  <div class="chat-container">
-    <header class="chat-header">
-      <h1>Agente de IA</h1>
-    </header>
+  <div class="app-container">
 
-    <div class="chat-box" id="chatBox">
-      <div class="message bot">
-        <p>Olá! Sou seu assistente de IA para gestão de resíduos.<br>Como posso ajudar hoje?</p>
+    <!-- CONTAINER DO CHAT -->
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1>Agente de IA</h1>
+      </header>
+
+      <div class="chat-box" id="chatBox">
+        <div class="message bot">
+          <p>Olá! Sou seu assistente de IA para gestão de resíduos.<br>Como posso ajudar hoje?</p>
+        </div>
       </div>
 
-      <div class="message user">
-        <p>Quando passa o caminhão de lixo na minha rua?</p>
+      <div class="suggestions">
+        <button data-msg="Horários da coleta">Horários da coleta</button>
+        <button data-msg="Como separar o lixo?">Como separar o lixo?</button>
+        <button data-msg="Pontos de descarte">Pontos de descarte</button>
       </div>
 
-      <div class="message bot">
-        <p>
-          A coleta seletiva na sua rua ocorre às terças e quintas, às 9h.<br>
-          A coleta de lixo comum é diária, às 19h.
-        </p>
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Digite sua dúvida aqui..." />
+        <button id="sendBtn">➤</button>
       </div>
     </div>
 
-    <div class="suggestions">
-      <button>Horários da coleta</button>
-      <button>Como separar o lixo?</button>
-      <button>Pontos de descarte</button>
-    </div>
+    <!-- MENU INFERIOR -->
+  <nav class="bottom-nav">
+  <button class="nav-item">
+    <span class="material-symbols-outlined">home</span>
+    <span>Início</span>
+  </button>
+  <button class="nav-item active">
+    <span class="material-symbols-outlined">chat_bubble</span>
+    <span>Chat</span>
+  </button>
+</nav>
 
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Digite sua dúvida aqui..." />
-      <button id="sendBtn">➤</button>
-    </div>
+
   </div>
 
   <script src="./../js/Chat.js"></script>
 </body>
+</html>
