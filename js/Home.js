@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const notifBtn = document.getElementById("notifBtn");
   if (notifBtn) {
     notifBtn.addEventListener("click", () => {
-      window.location.href = "./../html/Not.html"; // caminho da página de notificações
+      window.location.href = "./../html/Not.html";
     });
   }
 });
