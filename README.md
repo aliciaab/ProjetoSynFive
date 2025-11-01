@@ -29,3 +29,5 @@ O sistema propõe **soluções digitais**, como aplicativos ou painéis web, par
 - **Hospedagem:** Vercel
 - **Fontes:** Google Fonts (Public Sans, Material Symbols Outlined)
 
+## Documento de transparencia 
+https://docs.google.com/document/d/1K3nzatxSuhyekeyPVPAgNXDN07AT6pCp7YyaqejfmUs/edit?usp=sharing
