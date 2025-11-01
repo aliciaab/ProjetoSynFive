@@ -7,13 +7,12 @@
 
 body {
   background: #e8f5e9;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  overflow-y: auto;
   padding: 1rem 0;
+  overflow-y: auto;
 }
 
 .ecoleta-container {
@@ -27,6 +26,7 @@ body {
   flex-direction: column;
 }
 
+/* Header */
 .ecoleta-header {
   display: flex;
   align-items: center;
@@ -42,10 +42,13 @@ body {
   color: #333;
 }
 
-.icon-left span {
-  font-size: 2rem;
-  color: #388e3c;
+.icon-left img.logo-img {
+  width: 5rem;  
+  height: 5rem;
+  object-fit: contain;
 }
+
+
 
 .notif-btn {
   background: transparent;
@@ -58,6 +61,7 @@ body {
   font-size: 1.8rem;
 }
 
+/* Busca */
 .search-area {
   padding: 0 1rem;
   margin-top: 0.5rem;
@@ -86,12 +90,12 @@ body {
   color: #333;
 }
 
-/* MAPA CENTRALIZADO */
+/* Mapa */
 .map-view {
   width: 90%;
   height: 400px;
   margin: 1rem auto;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -101,7 +105,7 @@ body {
   border: 0;
 }
 
-/* LEGENDA CENTRALIZADA */
+/* Legenda */
 .legend {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);
@@ -135,7 +139,7 @@ body {
 .passed  { background: #f44336; }
 .current { background: #388e3c; }
 
-/* INFO CARD CENTRALIZADO E IGUAL À LEGENDA */
+/* Info card */
 .info-card {
   background: #fff;
   width: 90%;
@@ -159,7 +163,7 @@ body {
   text-align: center;
 }
 
-/* NAVEGAÇÃO INFERIOR */
+/* Navegação inferior */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -167,7 +171,7 @@ body {
   background: #fff;
   height: 65px;
   border-top: 1px solid #ddd;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
 }
 
 .nav-item {
@@ -193,3 +197,24 @@ body {
 .nav-item.active span.material-symbols-outlined {
   font-variation-settings: 'FILL' 1;
 }
+.ecoleta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e8f5e9;
+  padding: 1rem;
+  border-bottom: 1px solid #d8e9d8;
+  position: relative; /* necessário para centralizar o h2 */
+}
+
+.ecoleta-header h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #333;
+  position: absolute;
+  left: 51%;
+  transform: translateX(-50%);
+  margin: 0;
+  text-align: center;
+}
+
