@@ -43,18 +43,37 @@ body {
   object-fit: contain;
   cursor: pointer;
 }
+.ecoleta-header {
+  display: flex;
+  align-items: center; /* alinha verticalmente logo e texto */
+  gap: 0.5rem;         /* espaço mínimo entre logo e texto */
+  padding: 1rem;
+  border-bottom: 1px solid #d8e9d8;
+  background: #e8f5e9;
+  border-radius: 12px 12px 0 0;
+}
 
 .header-center {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  align-items: flex-start; /* antes era center, agora é left */
+  align-items: flex-start; /* mantém o texto junto à logo */
+  justify-content: center;  /* centraliza verticalmente em relação à logo */
+  gap: 0.1rem;              /* deixa título e parágrafo mais próximos */
 }
 
-.header-center h2,
-.header-center p.descricao {
-  text-align: left; /* garante que o texto fique alinhado à esquerda */
+.header-center h2 {
+  font-size: 1.0rem;  /* tamanho menor */
+  font-weight: 700;
+  color: #333;
+  margin: 0;
 }
+
+.header-center p.descricao {
+  font-size: 0.9rem;   /* tamanho menor */
+  color: #333;
+  margin: 0;
+}
+
 
 
 /* ===== CONTEÚDO ===== */
