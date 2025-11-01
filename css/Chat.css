@@ -1,3 +1,4 @@
+/* ===== ESTILOS GERAIS ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-  background: #f2f3f7;
+  background: #e8f5e9; /* verde do app */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,27 +21,34 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  border-radius: 20px; /* borda geral arredondada */
+  overflow: hidden;
 }
 
+/* ===== CONTAINER DO CHAT ===== */
 .chat-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-radius: 20px;
+  background: #e8f5e9; /* fundo verde do chat */
+  border-radius: 20px; /* bordas arredondadas do chat */
   overflow: hidden;
   margin-bottom: 65px; 
+  padding: 0.5rem; /* deixa espaço interno */
 }
 
+/* ===== CABEÇALHO ===== */
 .chat-header {
-  background: #1fa36a;
+  background: #1fa36a; /* verde escuro */
   color: #fff;
   text-align: center;
   padding: 1rem;
   font-weight: 600;
+  border-radius: 20px 20px 0 0; /* só arredonda topo */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* ===== CAIXA DE MENSAGENS ===== */
 .chat-box {
   flex: 1;
   padding: 1rem;
@@ -51,6 +59,7 @@ body {
   z-index: 1;
 }
 
+/* ===== MENSAGENS ===== */
 .message {
   max-width: 80%;
   padding: 0.8rem 1rem;
@@ -58,22 +67,24 @@ body {
   line-height: 1.4;
   font-size: 0.95rem;
   animation: fadeIn 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* leve sombra */
 }
 
 .message.bot {
-  background: #1fa36a;
+  background: #1fa36a; /* verde escuro */
   color: white;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
 .message.user {
-  background: #e6e6e6;
+  background: #dff5e6; /* verde clarinho */
   color: #333;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
 }
 
+/* ===== SUGESTÕES ===== */
 .suggestions {
   display: flex;
   gap: 0.5rem;
@@ -98,12 +109,14 @@ body {
   color: white;
 }
 
+/* ===== ÁREA DE INPUT ===== */
 .input-area {
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
   border-top: 1px solid #ddd;
   background: #fafafa;
+  border-radius: 0 0 20px 20px; /* borda arredondada inferior */
 }
 
 .input-area input {
@@ -134,6 +147,7 @@ body {
   background: #178b59;
 }
 
+/* ===== MENU INFERIOR ===== */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -175,6 +189,7 @@ body {
   font-variation-settings: 'FILL' 1;
 }
 
+/* ===== ANIMAÇÃO ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
