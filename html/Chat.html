@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Simples - Gestão de Resíduos</title>
+  <title>Perguntas Frequentes - Ecoleta</title>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
   <link rel="stylesheet" href="./../css/Chat.css" />
@@ -11,44 +11,41 @@
 <body>
   <div class="app-container">
 
-    <div class="chat-container">
-      <header class="chat-header">
-        <h1>Agente de IA</h1>
-      </header>
+    <header class="chat-header">
+      <h1>Perguntas Frequentes</h1>
+      <p>Toque na pergunta para iniciar</p>
+    </header>
 
-      <div class="chat-box" id="chatBox">
-        <div class="message bot">
-          <p>Olá! Sou seu assistente de IA para gestão de resíduos.<br>Como posso ajudar hoje?</p>
-        </div>
-      </div>
-
-      <div class="suggestions">
-        <button data-msg="Horários da coleta">Horários da coleta</button>
-        <button data-msg="Como separar o lixo?">Como separar o lixo?</button>
-        <button data-msg="Pontos de descarte">Pontos de descarte</button>
-      </div>
-
-      <div class="input-area">
-        <input type="text" id="userInput" placeholder="Digite sua dúvida aqui..." />
-        <button id="sendBtn">➤</button>
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">
+        <p>Olá! Clique na pergunta abaixo se o caminhão de lixo não passou na sua rua.</p>
       </div>
     </div>
 
-<nav class="bottom-nav">
-  <button class="nav-item active" data-link="./home.html">
-    <span class="material-symbols-outlined">home</span>
-    <span>Início</span>
-  </button>
-    <button class="nav-item" data-link="./ajuda.html">
-    <span class="material-symbols-outlined">help_outline</span>
-    <span>Informações</span>
-  </button>
-  <button class="nav-item" data-link="./chat.html">
-    <span class="material-symbols-outlined">chat_bubble</span>
-    <span>Chat</span>
-  </button>
-</nav>
+    <div class="suggestions" id="faqButtons">
+      <button data-step="1">
+        Não recolhem o lixo na minha rua.
+      </button>
+    </div>
 
+  </div>
+
+    <nav class="bottom-nav">
+      <button class="nav-item" data-link="./home.html">
+        <span class="material-symbols-outlined">home</span>
+        <span>Início</span>
+      </button> 
+
+      <button class="nav-item active" data-link="./Inform.html">
+        <span class="material-symbols-outlined">help_outline</span>
+        <span>Informações</span>
+      </button>
+
+      <button class="nav-item" data-link="./Chat.html">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span>Chat</span>
+      </button>
+    </nav>
 
   </div>
 

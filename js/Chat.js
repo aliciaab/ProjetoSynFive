@@ -1,72 +1,76 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sendBtn = document.getElementById("sendBtn");
-  const userInput = document.getElementById("userInput");
-  const chatBox = document.getElementById("chatBox");
-  const suggestions = document.querySelectorAll(".suggestions button");
-  const navButtons = document.querySelectorAll(".bottom-nav .nav-item");
+const chatBox = document.getElementById("chatBox");
+const faqButtons = document.getElementById("faqButtons");
 
-  // Função para enviar mensagem
-  function sendMessage(text) {
-    if (!text) return;
+// Estado do chat
+let step = 0;
+let userData = { bairro: "", tempo: "" };
 
-    // Mensagem do usuário
-    const userMsg = document.createElement("div");
-    userMsg.classList.add("message", "user");
-    userMsg.innerHTML = `<p>${text}</p>`;
-    chatBox.appendChild(userMsg);
-    userInput.value = "";
+function createMessage(text, sender = "bot") {
+  const msg = document.createElement("div");
+  msg.classList.add("message", sender);
+  msg.innerHTML = `<p>${text}</p>`;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
 
-    // Resposta do bot
+function showOptions(options) {
+  faqButtons.innerHTML = "";
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.textContent = opt.text;
+    btn.dataset.value = opt.value;
+    btn.addEventListener("click", () => handleStep(opt.value));
+    faqButtons.appendChild(btn);
+  });
+}
+
+function handleStep(value) {
+  // Cria mensagem do usuário
+  createMessage(value, "user");
+
+  if(step === 0){
+    // Passo 1: Pergunta inicial
+    createMessage("Faz quanto tempo que o caminhão de lixo não passa? Entre em contato com a prefeitura local para relatar o problema.");
+    step++;
     setTimeout(() => {
-      const botMsg = document.createElement("div");
-      botMsg.classList.add("message", "bot");
+      createMessage("Qual bairro você mora?");
+      showOptions([
+        { text: "Francisco Beltrão", value: "Francisco Beltrão" }
+      ]);
+    }, 500);
 
-      const msgLower = text.toLowerCase();
-      if (msgLower.includes("lixo")) {
-        botMsg.innerHTML = `<p>Separe recicláveis (papel, plástico, vidro, metal) dos resíduos orgânicos e rejeitos.</p>`;
-      } else if (msgLower.includes("horário") || msgLower.includes("coleta")) {
-        botMsg.innerHTML = `<p>A coleta seletiva ocorre às terças e quintas, às 9h.<br>A coleta comum é diária, às 19h.</p>`;
-      } else if (msgLower.includes("ponto")) {
-        botMsg.innerHTML = `<p>Os pontos de descarte estão localizados nos principais bairros da cidade. Consulte o mapa.</p>`;
-      } else {
-        botMsg.innerHTML = `<p>Posso ajudar com horários da coleta, separação do lixo ou pontos de descarte. 😊</p>`;
-      }
+  } else if(step === 1){
+    // Passo 2: Seleção do bairro
+    userData.bairro = value;
+    step++;
+    setTimeout(() => {
+      createMessage("Há quanto tempo isso está acontecendo?");
+      showOptions([
+        { text: "1 a 2 semanas", value: "1 a 2 semanas" },
+        { text: "3 a 5 semanas", value: "3 a 5 semanas" },
+        { text: "Mais de 5 semanas", value: "Mais de 5 semanas" }
+      ]);
+    }, 500);
 
-      chatBox.appendChild(botMsg);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }, 700);
-
-    chatBox.scrollTop = chatBox.scrollHeight;
+  } else if(step === 2){
+    // Passo 3: Seleção do tempo
+    userData.tempo = value;
+    step++;
+    setTimeout(() => {
+      createMessage(`Obrigado! Você relatou que no bairro ${userData.bairro} o caminhão de lixo não passa há ${userData.tempo}. A prefeitura será notificada.`);
+      faqButtons.innerHTML = ""; // Remove botões finais
+    }, 500);
   }
+}
 
-  // Eventos de envio
-  sendBtn.addEventListener("click", () => sendMessage(userInput.value.trim()));
-  userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage(userInput.value.trim());
+// Inicia o chat com o botão inicial
+faqButtons.querySelector("button").addEventListener("click", () => handleStep("Não recolhem o lixo na minha rua."));
+
+const navButtons = document.querySelectorAll(".nav-item");
+navButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    navButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    window.location.href = btn.dataset.link;
   });
-
-  // Sugestões rápidas
-  suggestions.forEach(btn => {
-    btn.addEventListener("click", () => sendMessage(btn.dataset.msg));
-  });
-
-  // Navegação inferior
-  navButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      navButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const link = btn.dataset.link;
-      if (link) window.location.href = link;
-    });
-  });
-
-  // Define os links corretos para cada botão
-  navButtons[0].dataset.link = "./../html/Home.html";   // Home
-  navButtons[1].dataset.link = "./../html/Inform.html"; // Informações
-  navButtons[2].dataset.link = "./../html/Chat.html";   // Chat
-
-  // Define botão ativo como Chat
-  navButtons.forEach(btn => btn.classList.remove("active"));
-  navButtons[2].classList.add("active");
 });
