@@ -1,3 +1,4 @@
+/* ===== ESTILOS GERAIS ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,49 +7,65 @@
 }
 
 body {
-  background: #f7f9f8;
+  background: #e8f5e9; /* fundo verdinho do app */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0;
   min-height: 100vh;
   color: #333;
 }
 
+/* ===== CONTAINER PRINCIPAL ===== */
+.main-container {
+  width: 100%;
+  max-width: 420px;
+  background: #e8f5e9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 65px; /* espaço para menu inferior se houver */
+}
+
+/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  padding: 1rem 1.2rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
+  justify-content: center; /* centraliza o título */
+  background: #e8f5e9;
+  padding: 1rem;
+  position: relative;
+  border-bottom: 1px solid #d8e9d8;
+  border-radius: 12px 12px 0 0;
 }
 
 .header h1 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+/* ===== ICONES NO HEADER (opcional) ===== */
+.header .logo {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.8rem;
+  color: #388e3c;
+}
+
+.header .menu {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.6rem;
+  color: #555;
   cursor: pointer;
 }
 
-.logo {
-  color: #2e7d32;
-}
-
-.menu {
-  color: #555;
-}
-
-.main-container {
-  padding: 1rem;
-}
-
+/* ===== SEÇÕES ===== */
 .section {
-  margin-bottom: 1.5rem;
+  padding: 1rem;
 }
 
 .section h2 {
@@ -57,21 +74,21 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* ===== CARDS ===== */
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 0.9rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.7rem;
   margin-bottom: 0.6rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   position: relative;
 }
 
 .card .icon {
-  background: #e8f5e9;
   border-radius: 8px;
   padding: 0.5rem;
   display: flex;
@@ -104,6 +121,7 @@ body {
   right: 0.9rem;
 }
 
+/* ===== CORES DOS CARDS ===== */
 .green .icon {
   background: #c8e6c9;
   color: #2e7d32;
