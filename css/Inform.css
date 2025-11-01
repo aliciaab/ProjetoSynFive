@@ -7,48 +7,62 @@
 }
 
 body {
-  background: #e8f5e9; /* verde claro do app */
+  background: #e8f5e9;
   display: flex;
   justify-content: center;
-  margin-bottom: 4%;
   padding: 1rem 0;
   min-height: 100vh;
 }
 
-.container {
+/* ===== CONTAINER PRINCIPAL ===== */
+.main-container {
   width: 100%;
   max-width: 420px;
   display: flex;
   flex-direction: column;
   position: relative;
-  border-radius: 20px; /* borda arredondada tipo celular */
-  overflow: hidden;    /* mantém o conteúdo dentro da borda */
+  border-radius: 20px;
+  overflow: hidden;
   background: #e8f5e9;
 }
 
-/* ===== CONTEÚDO ===== */
-.conteudo {
+/* ===== HEADER PADRONIZADO ===== */
+.ecoleta-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 1rem;
+  border-bottom: 1px solid #d8e9d8;
+  background: #e8f5e9;
+  border-radius: 12px 12px 0 0;
+}
+
+.icon-left img.logo-img.logo {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.header-center {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  flex: 1;
+  align-items: flex-start; /* antes era center, agora é left */
 }
 
-.h1 {
-  text-align: center;
+.header-center h2,
+.header-center p.descricao {
+  text-align: left; /* garante que o texto fique alinhado à esquerda */
+}
+
+
+/* ===== CONTEÚDO ===== */
+.container {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
-  background: #1fa36a;
-  color: #fff;
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* ===== DESCRIÇÃO ===== */
-.descricao {
-  font-size: 0.95rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 /* ===== INFO CARDS ===== */
@@ -62,7 +76,6 @@ body {
   gap: 0.8rem;
 }
 
-/* ===== TIPOS DE LIXO EM BOXES ===== */
 .lixo-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -82,13 +95,11 @@ body {
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* Cores por tipo de lixo */
 .lixo-organico { background: #8bc34a; }
 .lixo-reciclavel { background: #4caf50; }
 .lixo-perigoso { background: #f44336; }
 .lixo-eletronico { background: #2196f3; }
 
-/* ===== TÍTULOS ===== */
 .info-card h2 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -143,15 +154,7 @@ body {
   margin-bottom: 0.2rem;
 }
 
-/* Ícone do botão ativo fica verde */
 .nav-item.active span.material-symbols-outlined {
-  color: #388e3c; /* ícone verde */
+  color: #388e3c;
   font-variation-settings: 'FILL' 1;
-}
-
-/* Logo caso use */
-.icon-left img.logo-img {
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
 }

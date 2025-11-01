@@ -7,6 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Clique na logo para voltar à Home
+  const logo = document.querySelector(".ecoleta-header .logo-img");
+  if (logo) {
+    logo.addEventListener("click", () => {
+      window.location.href = "./../html/Home.html"; // Redireciona para Home
+    });
+  }
+
   // Navegação inferior
   const navItems = document.querySelectorAll(".bottom-nav .nav-item");
   navItems.forEach(item => {
