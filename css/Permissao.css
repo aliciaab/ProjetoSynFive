@@ -1,50 +1,58 @@
-body {
-  font-family: 'Public Sans', sans-serif;
-  min-height: 100vh;
+/* ===== ESTILOS GERAIS ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
+}
+
+body {
   background-color: #DEDEDE; 
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
 
-
+body.dark {
+  background-color: #2c2c2c;
+  color: #eee;
+}
 
 .container {
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centraliza tudo no centro da tela */
-  justify-content: center;
-}
-
-/* esconde a logo do topo */
-.icon-container,
-.icon-bg {
-  display: none;
-}
-
-.main {
-  flex-grow: 1;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centraliza verticalmente o conteúdo */
-  text-align: center;
+  justify-content: center;
   padding: 2rem 1rem;
 }
 
-/* restante do seu estilo permanece igual */
-.permissions {
-  max-width: 400px;
+/* ===== LOGO (SPLASH) ===== */
+.icon-container,
+.icon-bg {
+  display: none; /* ocultar por enquanto */
+}
+
+.main {
   width: 100%;
-  padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+/* ===== PERMISSÕES ===== */
+.permissions {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .permission-item {
@@ -57,11 +65,12 @@ body {
 .perm-icon-bg {
   width: 64px;
   height: 64px;
-  background-color: #DEDEDE;
   border-radius: 50%;
+  background-color: #C8E6C9; /* verde claro */
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s;
 }
 
 body.dark .perm-icon-bg {
@@ -69,46 +78,56 @@ body.dark .perm-icon-bg {
 }
 
 .perm-icon {
-  color: #DEDEDE;
   font-size: 32px;
+  color: #fff;
+  transition: color 0.3s;
 }
 
 .perm-title {
-  font-weight: 700;
   font-size: 1.125rem;
+  font-weight: 700;
   color: #333;
 }
 
 body.dark .perm-title {
-  color: #333;
+  color: #fff;
 }
 
 .perm-desc {
-  color: #888;
   font-size: 1rem;
+  color: #555;
   line-height: 1.4;
 }
 
 body.dark .perm-desc {
-  color: #aaa;
+  color: #ccc;
 }
 
+/* ===== BOTÕES ===== */
 .button-container {
   width: 100%;
   max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* espaço entre os botões */
 }
 
-#continueBtn {
+#continueBtn,
+#cancelaBtn {
   width: 100%;
   height: 56px;
-  background-color: #888;
   border: none;
   border-radius: 12px;
-  color: white;
   font-size: 1.125rem;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+}
+
+/* Botão Aceitar */
+#continueBtn {
+  background-color: #888;
+  color: #fff;
 }
 
 #continueBtn:hover {
@@ -123,17 +142,10 @@ body.dark #continueBtn:hover {
   background-color: #555;
 }
 
+/* Botão Cancelar */
 #cancelaBtn {
-  width: 100%;
-  height: 56px;
   background-color: #888;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-size: 1.125rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+  color: #fff;
 }
 
 #cancelaBtn:hover {
@@ -148,6 +160,7 @@ body.dark #cancelaBtn:hover {
   background-color: #555;
 }
 
+/* ===== ICONES MATERIAL ===== */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
