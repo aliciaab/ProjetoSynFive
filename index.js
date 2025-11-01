@@ -10,13 +10,3 @@ window.addEventListener("load", () => {
     }, 600);
   }, 2000);
 });
-
-// Ações dos botões
-document.getElementById("allow").addEventListener("click", () => {
-  alert("Permissões concedidas! 🌱");
-  window.location.href = "./html/home.html";
-});
-
-document.getElementById("deny").addEventListener("click", () => {
-  alert("Você pode ativar as permissões mais tarde nas configurações.");
-});
