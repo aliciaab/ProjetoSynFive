@@ -147,10 +147,23 @@ body {
 }
 .app-container {
   width: 100%;
-  max-width: 420px;      /* largura tipo celular */
-  border-radius: 20px;    /* borda arredondada tipo celular */
-  overflow: hidden;       /* para manter conteúdo dentro da borda */
+  max-width: 420px;
+  border-radius: 20px;
+  overflow: hidden;  /* mantém tudo dentro das bordas arredondadas */
   display: flex;
   flex-direction: column;
-  background: #e8f5e9;    /* cor do app */
+  background: #e8f5e9;
+  min-height: 100vh;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  height: 65px;
+  border-bottom-left-radius: 20px;  /* cantos arredondados embaixo */
+  border-bottom-right-radius: 20px; /* cantos arredondados embaixo */
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  margin-top: auto; /* empurra pro final do container */
 }

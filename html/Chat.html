@@ -11,45 +11,42 @@
 <body>
   <div class="app-container">
 
-    <header class="chat-header">
-      <h1>Perguntas Frequentes</h1>
-      <p>Toque na pergunta para iniciar</p>
-    </header>
+  <header class="chat-header">
+    <h1>Perguntas Frequentes</h1>
+    <p>Toque na pergunta para iniciar</p>
+  </header>
 
-    <div class="chat-box" id="chatBox">
-      <div class="message bot">
-        <p>Olá! Clique na pergunta abaixo se o caminhão de lixo não passou na sua rua.</p>
-      </div>
+  <div class="chat-box" id="chatBox">
+    <div class="message bot">
+      <p>Olá! Clique na pergunta abaixo se o caminhão de lixo não passou na sua rua.</p>
     </div>
-
-    <div class="suggestions" id="faqButtons">
-      <button data-step="1">
-        Não recolhem o lixo na minha rua.
-      </button>
-    </div>
-
   </div>
 
-    <nav class="bottom-nav">
-      <button class="nav-item" data-link="./home.html">
-        <span class="material-symbols-outlined">home</span>
-        <span>Início</span>
-      </button> 
-
-     <button class="nav-item" data-link="./Inform.html">
-  <span class="material-symbols-outlined">help_outline</span>
-  <span>Informações</span>
-</button>
-
-<button class="nav-item active" data-link="./Chat.html">
-  <span class="material-symbols-outlined">chat_bubble</span>
-  <span>FAQ</span>
-</button>
-
-    </nav>
-
+  <div class="suggestions" id="faqButtons">
+    <button data-step="1">
+      Não recolhem o lixo na minha rua.
+    </button>
   </div>
 
+  <!-- NAV DENTRO DO CONTAINER -->
+  <nav class="bottom-nav">
+    <button class="nav-item" data-link="./home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span>Início</span>
+    </button> 
+
+    <button class="nav-item" data-link="./Inform.html">
+      <span class="material-symbols-outlined">help_outline</span>
+      <span>Informações</span>
+    </button>
+
+    <button class="nav-item active" data-link="./Chat.html">
+      <span class="material-symbols-outlined">chat_bubble</span>
+      <span>FAQ</span>
+    </button>
+  </nav>
+
+</div>
   <script src="./../js/Chat.js"></script>
 </body>
 </html>
