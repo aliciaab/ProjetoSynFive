@@ -91,11 +91,26 @@ body {
 
 /* ======== MAPA ======== */
 .map-view {
-  flex: 1;
-  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqXkbjg9zsCxoEd5uqEh0V9tr08fo8cEp3WXGV84LM-D8WCvwM-g1DyjkpbRZcsIF0kjV55shFqPGHPAnRls3mdVQuxmtnufc4YsFDEAucFwWMh1jCMb9A6t2i5zAfB8TckcueaIt64PxYgFR6qq608QF0v7OK_sGItnSkL-fJO_OjTbAlid8O7-nH8Vkifh9J-OpFy_OHxL221r6QtfFbBz4_tiz8vyZj3MLJxmg_N0QFkfuUm7DYpAGW9VWv5CcpEkteat8RWkU");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  flex: 1; /* ocupa o espaço disponível */
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem;
 }
+
+.map-view iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 420px) {
+  .map-view {
+    height: 250px; /* altura adequada para mobile */
+  }
+}
+
 
 /* ======== LEGENDA ======== */
 .legend {
