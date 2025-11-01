@@ -147,3 +147,9 @@ body {
 .nav-item.active span.material-symbols-outlined {
   font-variation-settings: 'FILL' 1;
 }
+
+.icon-left img.logo-img {
+  width: 3rem;  /* antes era 2rem */
+  height: 3rem;
+  object-fit: contain;
+}
