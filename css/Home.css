@@ -215,4 +215,47 @@ body {
   margin: 0;
   text-align: center;
 }
+.mascote-balao {
+  position: absolute;
+  bottom: -8px;       /* altura em relação ao rodapé */
+  left: 60%;          /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse; /* balão acima do mascote */
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
 
+.mascote-balao img {
+  width: 100px;       /* aumenta o mascote de forma proporcional */
+  height: auto;       /* mantém proporção */
+  object-fit: contain;
+}
+
+/* Balão de fala */
+.balao {
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
+  color: #333;
+  max-width: 220px;
+  position: relative;
+  text-align: center;
+}
+
+/* Triângulo do balão */
+.balao::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;               
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;  
+}
