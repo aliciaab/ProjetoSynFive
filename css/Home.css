@@ -309,3 +309,27 @@ body {
   font-size: 0.9rem;
   color: #333;
 }
+/* 🔹 Ajustes responsivos para o mascote no celular */
+@media (max-width: 480px) {
+  .mascote-balao {
+    bottom: -40px;          /* sobe um pouco o mascote */
+    left: 50%;              /* centraliza melhor */
+    transform: translateX(-50%);
+    gap: 0.4rem;
+  }
+
+  .mascote-balao img {
+    width: 80px;            /* diminui o tamanho do mascote */
+  }
+
+  .balao {
+    font-size: 0.85rem;     /* texto menor no balão */
+    max-width: 180px;       /* balão mais estreito */
+    padding: 0.6rem 0.8rem;
+  }
+
+  .balao::after {
+    bottom: -8px;           /* ajusta o triângulo */
+    border-width: 8px;
+  }
+}
