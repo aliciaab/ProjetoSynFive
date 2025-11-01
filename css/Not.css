@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #e8f5e9; /* fundo verdinho do app */
+  background: #e8f5e9;
   display: flex;
   justify-content: center;
   padding: 1rem 0;
@@ -25,41 +25,35 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  padding-bottom: 65px; /* espaço para menu inferior se houver */
+  padding-bottom: 65px;
 }
 
 /* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
-  justify-content: center; /* centraliza o título */
+  justify-content: flex-start; /* logo à esquerda */
   background: #e8f5e9;
   padding: 1rem;
   position: relative;
   border-bottom: 1px solid #d8e9d8;
   border-radius: 12px 12px 0 0;
+  gap: 0.5rem;
 }
 
-.header h1 {
+.header h1.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: 700;
   font-size: 1.2rem;
   color: #333;
-  text-align: center;
 }
 
-/* ===== ICONES NO HEADER (opcional) ===== */
-.header .logo {
-  position: absolute;
-  left: 1rem;
-  font-size: 1.8rem;
-  color: #388e3c;
-}
-
-.header .menu {
-  position: absolute;
-  right: 1rem;
-  font-size: 1.6rem;
-  color: #555;
+.icon-left img.logo-img.logo {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
   cursor: pointer;
 }
 
@@ -86,6 +80,7 @@ body {
   margin-bottom: 0.6rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   position: relative;
+  cursor: pointer;
 }
 
 .card .icon {
